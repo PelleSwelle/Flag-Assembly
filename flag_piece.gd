@@ -18,3 +18,4 @@ func _on_mouse_entered() -> void:
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left_click"):
 		print("clicked")
+		# translate(
