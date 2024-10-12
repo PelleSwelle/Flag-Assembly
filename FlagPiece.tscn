@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bspt6h3alccwe" path="res://flagParts/Vector-3.png" id="1_jnucs"]
 [ext_resource type="Script" path="res://flag_piece.gd" id="1_uy8c1"]
 
-[node name="FlagPiece" type="RigidBody2D"]
+[node name="FlagPiece" type="RigidBody2D" groups=["pickable"]]
 input_pickable = true
 script = ExtResource("1_uy8c1")
 
