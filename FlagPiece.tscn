@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c58ub7o6hefeq"]
+
+[ext_resource type="Texture2D" uid="uid://bspt6h3alccwe" path="res://flagParts/Vector-3.png" id="1_jnucs"]
+[ext_resource type="Script" path="res://flag_piece.gd" id="1_uy8c1"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+input_pickable = true
+script = ExtResource("1_uy8c1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1.21917, 0.203415)
+scale = Vector2(0.40639, 0.401135)
+polygon = PackedVector2Array(-281.058, -563.908, 275.058, -189.969, 275.058, 188.955, -278.597, 560.401)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jnucs")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]

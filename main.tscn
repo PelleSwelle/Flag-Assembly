@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://chucmyx5exksy"]
+
+[ext_resource type="Script" path="res://CreateShape.gd" id="1_mcayw"]
+[ext_resource type="PackedScene" uid="uid://c58ub7o6hefeq" path="res://FlagPiece.tscn" id="2_ndb48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smptn"]
+size = Vector2(58.8078, 20)
+
+[node name="Node2D" type="Node"]
+script = ExtResource("1_mcayw")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("2_ndb48")]
+position = Vector2(549, 67)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(576, 5.37)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 635.63)
+scale = Vector2(19.625, 1)
+shape = SubResource("RectangleShape2D_smptn")
