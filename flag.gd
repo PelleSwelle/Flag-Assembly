@@ -3,7 +3,6 @@ extends Node
 var flagPieceNode
 var flagPieces = []
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	flagPieceNode = load("res://flagPiece.tscn")
 	load_pieces('saintKittsAndNevis')
@@ -41,6 +40,5 @@ func instantiate_flag():
 		
 		add_child(node)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
