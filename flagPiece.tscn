@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2ifnb8c2lbjc"]
+
+[ext_resource type="Script" path="res://flagPiece.gd" id="1_ehj5d"]
+[ext_resource type="Texture2D" uid="uid://cbwkqdhu0xval" path="res://Flags/togo/green.svg" id="2_mbkip"]
+
+[node name="flagPiece" type="RigidBody2D"]
+position = Vector2(253, 172)
+input_pickable = true
+script = ExtResource("1_ehj5d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-450, -278, -450, 278, 450, 278, 450, -278)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mbkip")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

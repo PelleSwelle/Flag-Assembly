@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxk0k28bqkcan"]
+
+[ext_resource type="Script" path="res://flagLoader.gd" id="1_qnxh7"]
+[ext_resource type="Script" path="res://goal.gd" id="7_wsuul"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4a7i5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oemp4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_qnxh7")
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(590, 648)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+shape = SubResource("WorldBoundaryShape2D_4a7i5")
+one_way_collision = true
+
+[node name="goalArea" type="Area2D" parent="."]
+position = Vector2(588, 247)
+scale = Vector2(22.305, 14.105)
+script = ExtResource("7_wsuul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goalArea"]
+shape = SubResource("RectangleShape2D_oemp4")
