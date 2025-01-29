@@ -22,12 +22,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position_label.text = position_string % [position.x, position.y]
 	rotation_label.text = rotation_string % [rotation]
-	# if (isGrabbed):
-	# 	self.position = get_global_mouse_position()
 	
 func _input(event):
 	if event is InputEventMouseButton:
-		print('mouse button event')
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_action_pressed("select"):
 				if self.get_global_mouse_position().distance_to(self.position) < 40:  # Adjust the distance threshold as needed
@@ -43,7 +40,6 @@ func _on_goal_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_in
 	self.gravity_scale = 0
 
 func _on_goal_area_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	print('exited area')
 	self.gravity_scale = 1
 
 # func _physics_process(delta):
